@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { ListGroup } from 'reactstrap';
-import Artist from '../Artist';
+import { ArtistContainer } from '../Artist';
+import { UserDataState } from '../../reducers/user-data.reducer'
 
 interface Props {
-  userData: object;
+  userData: UserDataState;
   fetchUserData: () => void;
 }
 
@@ -12,11 +13,11 @@ export const ArtistsListComponent: React.FunctionComponent<Props> = (props) => (
     <div className="headline">
       <h3>Top 50 Artists</h3>
     </div>
-    {this.props.artists
+    {props.userData.favouriteArtists
       ? (
         <ListGroup>
-          {this.props.artists.map((artist, i) => (
-            <Artist
+          {props.userData.favouriteArtists.map((artist, i) => (
+            <ArtistContainer
               key={i}
               name={artist.name}
               artistUrl={artist.external_urls.spotify}

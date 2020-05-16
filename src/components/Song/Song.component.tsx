@@ -4,8 +4,12 @@ import {
 } from 'reactstrap';
 
 interface Props {
-  userData: object;
-  fetchUserData: () => void;
+  trackUrl: string;
+  img: string;
+  name: string;
+  artists: Array<any>; // TODO:"typings"
+  albumUrl: string;
+  album: string;
 }
 
 export const SongComponent: React.FunctionComponent<Props> = (props) => (

@@ -1,13 +1,13 @@
 import { BaseAction, actionIds } from '../common';
 
-export type UserDataState = object;
-// export type UserDataState = {
-//     user: any,
-//     favouriteTracks: any,
-//     favouriteArtists: any,
-//     topThree: any,
-//     topGenres: any,
-// };
+// export type UserDataState = object;
+export type UserDataState = {
+    user: any,
+    favouriteTracks: any,
+    favouriteArtists: any,
+    topThree: any,
+    topGenres: any,
+};
 
 export const userDataReducer = (
   state: UserDataState = {

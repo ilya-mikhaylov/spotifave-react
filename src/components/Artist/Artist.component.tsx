@@ -4,8 +4,9 @@ import {
 } from 'reactstrap';
 
 interface Props {
-  userData: object;
-  fetchUserData: () => void;
+  artistUrl: string;
+  img: string;
+  name: string;
 }
 
 export const ArtistComponent: React.FunctionComponent<Props> = (props) => (

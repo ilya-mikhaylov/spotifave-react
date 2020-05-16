@@ -1,1 +1,1 @@
-export * from './Artists.container'
+export * from './Artist.container'

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { ListGroup, Button } from 'reactstrap';
-import Song from '../Song';
+import { SongContainer } from '../Song';
+import { UserDataState } from '../../reducers/user-data.reducer'
 
 interface Props {
-  userData: object;
+  userData: UserDataState;
   fetchUserData: () => void;
 }
 
@@ -13,11 +14,11 @@ export const SongsListComponent: React.FunctionComponent<Props> = (props) => (
       <h3>Top 50 Songs</h3>
       <Button color="success" size="sm" onClick={this.props.createPlaylist}>Add playlist</Button>
     </div>
-    {this.props.songs
+    {props.userData.favouriteTracks
       ? (
         <ListGroup>
-          {this.props.songs.map((song, i) => (
-            <Song
+          {props.userData.favouriteTracks.map((song, i) => (
+            <SongContainer
               key={i}
               name={song.name}
               trackUrl={song.external_urls.spotify}
