@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import {
   Collapse,
   Navbar,
@@ -9,9 +10,10 @@ import {
   NavLink,
   NavbarText,
 } from 'reactstrap';
+import { UserDataState } from '../../reducers/user-data.reducer';
 
 interface Props {
-  userData: object;
+  userData: UserDataState;
   fetchUserData: () => void;
 }
 

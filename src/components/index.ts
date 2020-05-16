@@ -3,3 +3,4 @@ export * from './Artist';
 export * from './ArtistsList';
 export * from './Song';
 export * from './SongsList';
+export * from './Navbar';
