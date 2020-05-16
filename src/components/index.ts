@@ -6,4 +6,5 @@ export * from './SongsList';
 export * from './Navbar';
 export * from './TopGenres';
 export * from './TopThreeArtists';
+export * from './Stats';
 export * from './WelcomePage';
