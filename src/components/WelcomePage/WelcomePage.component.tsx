@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from 'reactstrap';
 
-export const WelcomePageComponent: React.FunctionComponent<Props> = () => (
+export const WelcomePageComponent: React.FunctionComponent = () => (
   <div className="welcome-container info">
     <div>
       <div><h1>Your personal top is already here.</h1></div>

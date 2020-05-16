@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { useState } from 'react';
 import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
+import { UserDataState } from '../../reducers/user-data.reducer';
 
 interface Props {
-  userData: object;
+  userData: UserDataState;
   fetchUserData: () => void;
 }
 
