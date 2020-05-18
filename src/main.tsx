@@ -5,6 +5,7 @@ import Routes from './routes';
 import { NumberViewerContainer } from './components';
 import { store } from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './components/styles/index.css';
 
 ReactDOM.render(
   <Provider store={store}>
