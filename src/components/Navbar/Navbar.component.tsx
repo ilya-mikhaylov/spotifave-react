@@ -39,9 +39,14 @@ export const NavbarComponent: React.FunctionComponent<Props> = (props) => {
               <NavLink href="/logout">Logout</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>
-            some text
-          </NavbarText>
+          {props.userData.user ? (
+            <>
+              <NavbarText>
+                {props.userData.user.display_name}
+              </NavbarText>
+            </>
+          ) : null}
+
         </Collapse>
       </Navbar>
     </div>
