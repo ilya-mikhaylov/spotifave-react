@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ListGroup, Button } from 'reactstrap';
 import { SongContainer } from '../Song';
-import { UserDataState } from '../../reducers/user-data.reducer'
+import { UserDataState } from '../../reducers/user-data.reducer';
 
 interface Props {
   userData: UserDataState;

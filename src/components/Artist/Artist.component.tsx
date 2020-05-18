@@ -10,6 +10,7 @@ interface Props {
 }
 
 export const ArtistComponent: React.FunctionComponent<Props> = (props) => (
+  <>
   <ListGroupItem tag="a" href={props.artistUrl} action>
     <Media className="mt-1 element-text">
       <Media left middle href={props.artistUrl}>
@@ -22,4 +23,5 @@ export const ArtistComponent: React.FunctionComponent<Props> = (props) => (
       </Media>
     </Media>
   </ListGroupItem>
+  </>
 );
