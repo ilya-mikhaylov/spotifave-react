@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 
 import { NumberViewerContainer } from './components';
 
@@ -17,7 +17,7 @@ const Routes: React.SFC = () => (
     <Switch>
       <Route exact path="/" component={NumberViewerContainer} />
       <Route path="/test" component={NumberViewerContainer} />
-      <Route component={() => <div>Not Found</div>} />
+      <Route component={() => <Redirect to="/" />} />
     </Switch>
   </BrowserRouter>
 );
