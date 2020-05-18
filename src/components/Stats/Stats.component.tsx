@@ -10,7 +10,6 @@ interface Props {
     fetchUserData: () => void;
   }
 
-
 export const StatsComponent: React.FunctionComponent<Props> = (props) => {
   useEffect(() => {
     console.log('loaded');
