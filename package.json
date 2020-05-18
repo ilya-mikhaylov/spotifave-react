@@ -2,13 +2,12 @@
   "name": "spotifave-backend",
   "version": "1.0.0",
   "description": "",
-  "proxy": "http://localhost:3001/",
   "main": "server.js",
   "scripts": {
     "start": "npx nodemon server.js",
     "client": "webpack-dev-server  --mode development --inline --hot",
     "build": "webpack  --mode development",
-    "heroku-postbuild": "cd client && npm install && npm run build",
+    "heroku-postbuild": "yarn install && yarn webpack build && yarn start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

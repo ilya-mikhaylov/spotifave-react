@@ -1,3 +1,6 @@
+// This is an old implementation of playlist creation functionality.
+// Playlist creator should and will be rewritten.
+
 import moment from 'moment';
 import { SpotifyAPI } from '../api';
 
