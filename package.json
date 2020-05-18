@@ -7,7 +7,7 @@
     "start": "npx nodemon server.js",
     "client": "webpack-dev-server  --mode development --inline --hot",
     "build": "webpack  --mode development",
-    "heroku-postbuild": "yarn install && yarn webpack build && yarn start",
+    "heroku-postbuild": "yarn install && yarn build && yarn start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
