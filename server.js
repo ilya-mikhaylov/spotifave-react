@@ -102,13 +102,13 @@ app.get('/callback', (req, res) => {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect(`http://localhost:3000/stats/#${
+        res.redirect(`http://localhost:3000/stats#${
           querystring.stringify({
             access_token,
             refresh_token,
           })}`);
       } else {
-        res.redirect(`http://localhost:3000/#${
+        res.redirect(`http://localhost:3000#${
           querystring.stringify({
             error: 'invalid_token',
           })}`);

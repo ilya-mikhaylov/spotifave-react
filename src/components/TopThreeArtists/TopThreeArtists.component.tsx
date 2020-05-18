@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const TopThreeArtistsComponent: React.FunctionComponent<Props> = (props) => (
-  <div className="headline">
+  (props.userData.topThree ? <>  <div className="headline">
     <h3>Your favourite artists</h3>
     <ListGroup horizontal>
       {props.userData.topThree.length === 3 ? props.userData.topThree.map((artist, i) => (
@@ -19,5 +19,6 @@ export const TopThreeArtistsComponent: React.FunctionComponent<Props> = (props) 
         </ListGroupItem>
       )) : null}
     </ListGroup>
-  </div>
+  </div></> : null)
+
 );

@@ -12,12 +12,12 @@ export const SongsListComponent: React.FunctionComponent<Props> = (props) => (
   <div>
     <div className="headline-and-button">
       <h3>Top 50 Songs</h3>
-      <Button color="success" size="sm" onClick={this.props.createPlaylist}>Add playlist</Button>
+      <Button color="success" size="sm">Add playlist</Button>
     </div>
     {props.userData.favouriteTracks
       ? (
         <ListGroup>
-          {props.userData.favouriteTracks.map((song, i) => (
+          {props.userData.favouriteTracks.items.map((song, i) => (
             <SongContainer
               key={i}
               name={song.name}

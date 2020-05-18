@@ -16,7 +16,7 @@ export const ArtistsListComponent: React.FunctionComponent<Props> = (props) => (
     {props.userData.favouriteArtists
       ? (
         <ListGroup>
-          {props.userData.favouriteArtists.map((artist, i) => (
+          {props.userData.favouriteArtists.items.map((artist, i) => (
             <ArtistContainer
               key={i}
               name={artist.name}
