@@ -12,11 +12,10 @@ interface Props {
 
 export const StatsComponent: React.FunctionComponent<Props> = (props) => {
   useEffect(() => {
-    console.log('loaded');
-  });
+    props.fetchUserData();
+  }, []);
   return (
     <>
-      <div onClick={props.fetchUserData}>test</div>
       <div className="stats-container info">
         <div className="head-container">
           <div className="top-three-container">
