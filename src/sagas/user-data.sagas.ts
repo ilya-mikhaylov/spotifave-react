@@ -56,6 +56,7 @@ function* requestUserData() {
     data.topThree = topThree;
     data.topGenres = mostFreqGenres();
     console.log(data);
+    localStorage.setItem('access_token', getHashParams().access_token);
     return data;
   }
 
