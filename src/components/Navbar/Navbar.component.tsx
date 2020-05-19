@@ -29,15 +29,24 @@ export const NavbarComponent: React.FunctionComponent<Props> = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="#">Profile</NavLink>
-            </NavItem>
+            {props.userData.user ? (
+              <>
+                <NavItem>
+                  <NavLink href="#">Profile</NavLink>
+                </NavItem>
+              </>
+            ) : null}
             <NavItem>
               <NavLink href="https://github.com/ilya-mikhaylov/spotifave-react">GitHub</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/logout">Logout</NavLink>
-            </NavItem>
+            {props.userData.user ? (
+              <>
+                <NavItem>
+                  <NavLink href="/logout">Logout</NavLink>
+                </NavItem>
+              </>
+            ) : null}
+
           </Nav>
           {props.userData.user ? (
             <>
