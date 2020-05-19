@@ -3,7 +3,7 @@ import {
   Route, Switch, BrowserRouter, Redirect,
 } from 'react-router-dom';
 
-import { NumberViewerContainer, WelcomePageContainer, StatsContainer } from './components';
+import { WelcomePageContainer, StatsContainer } from './components';
 import { LayoutContainer } from './components/Layout';
 
 const Routes: React.SFC = () => (
@@ -12,8 +12,7 @@ const Routes: React.SFC = () => (
       <Switch>
         <Route exact path="/" component={WelcomePageContainer} />
         <Route path="/stats" component={StatsContainer} />
-        <Route path="/test" component={NumberViewerContainer} />
-        <Route component={() => <div>not found</div>} />
+        <Route component={() => <Redirect to="/" />} />
       </Switch>
     </BrowserRouter>
   </LayoutContainer>

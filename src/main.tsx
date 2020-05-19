@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Routes from './routes';
-import { NumberViewerContainer } from './components';
 import { store } from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/styles/index.css';
