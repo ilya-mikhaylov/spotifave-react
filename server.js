@@ -22,6 +22,7 @@ const server = http.createServer(app);
 const client_id = process.env.CLIENT_ID; // Your client id
 const client_secret = process.env.CLIENT_SECRET; // Your secret
 const redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
+const address = process.env.ADDRESS || 'http://localhost:3000';
 
 const path = require('path');
 const publicPath = path.join(__dirname, 'dist');
@@ -110,13 +111,13 @@ app.get('/callback', (req, res) => {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect(`http://localhost:3000/stats#${
+        res.redirect(`${address}/stats#${
           querystring.stringify({
             access_token,
             refresh_token,
           })}`);
       } else {
-        res.redirect(`http://localhost:3000#${
+        res.redirect(`${address}#${
           querystring.stringify({
             error: 'invalid_token',
           })}`);
