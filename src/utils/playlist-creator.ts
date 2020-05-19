@@ -14,7 +14,7 @@ export async function playlistCreator() {
     const newPlaylist = await api.client.createPlaylist(userid, {
       name: `Your Top 50 by Spotifave (${moment().format('YYYY-MM-DD')})`,
       public: false,
-      description: 'The playlist is private by default. Visit spotifave.herokuapp.com for more stats and new playlist.',
+      description: 'The playlist is private by default. Visit spotifave.olimpius.net for more stats and new playlist.',
     });
     const newPlaylistId = await newPlaylist.id;
     const favTracksUris = function () {
