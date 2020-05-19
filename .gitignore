@@ -26,3 +26,6 @@ yarn-error.log*
 .vscode
 .vs
 .idea
+
+/dist
+captain-definition
