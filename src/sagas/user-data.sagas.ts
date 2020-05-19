@@ -22,7 +22,14 @@ function* requestUserData() {
     }
     return hashParams;
   };
-  const api = new SpotifyAPI(getHashParams().access_token);
+  if (getHashParams().access_token) {
+    localStorage.setItem('access_token', getHashParams().access_token);
+  }
+  function removeHash() {
+    history.pushState('', document.title, window.location.pathname + window.location.search);
+  }
+  removeHash();
+  const api = new SpotifyAPI(localStorage.getItem('access_token'));
   async function fetchNewData() {
     const data = {
       user: await api.client.getMe(),
@@ -55,8 +62,6 @@ function* requestUserData() {
     };
     data.topThree = topThree;
     data.topGenres = mostFreqGenres();
-    console.log(data);
-    localStorage.setItem('access_token', getHashParams().access_token);
     return data;
   }
 
