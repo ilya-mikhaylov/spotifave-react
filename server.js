@@ -8,11 +8,16 @@
  */
 
 const express = require('express'); // Express web server framework
+const http = require('http');
 const request = require('request'); // "Request" library
 const cors = require('cors');
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv').config();
+
+const port = process.env.PORT || 3001;
+const app = express();
+const server = http.createServer(app);
 
 const client_id = process.env.CLIENT_ID; // Your client id
 const client_secret = process.env.CLIENT_SECRET; // Your secret
@@ -38,7 +43,7 @@ const generateRandomString = function (length) {
 
 const stateKey = 'spotify_auth_state';
 
-const app = express();
+// const app = express();
 
 app.use(express.static(`${__dirname}/public`))
   .use(cors())
@@ -143,5 +148,9 @@ app.get('/refresh_token', (req, res) => {
   });
 });
 
-console.log('Listening on 3001');
-app.listen(3001);
+app.use(express.static(publicPath));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+});
+
+server.listen(port, () => console.log(`Listening on ${port}`));
